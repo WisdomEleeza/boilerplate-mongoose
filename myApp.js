@@ -8,10 +8,9 @@ const personSchema = new Schema({
     type: String,
     required: true,
   },
-  // age: {
-  //   type: Number,
-  //   unique: false,
-  // },
+  age: {
+    type: Number,
+  },
   favoriteFoods: [String],
 });
 
@@ -20,7 +19,7 @@ let Person = mongoose.model('Person', personSchema);
 const createAndSavePerson = (done) => {
   const newPerson = new Person ({
     name: "foobar",
-    // age: 3,
+    age: 3,
     favoriteFoods: ['Chips', 'Gari']
 })
 
