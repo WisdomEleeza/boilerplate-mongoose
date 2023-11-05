@@ -33,11 +33,6 @@ newPerson.save((err, data) => {
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
-  const arrayOfPeople = [
-    {name: "Frankie", age: 74, favoriteFoods: ["Del Taco"]},
-    {name: "Sol", age: 76, favoriteFoods: ["roast chicken"]},
-    {name: "Robert", age: 78, favoriteFoods: ["wine"]}
-  ];
   Person.create(arrayOfPeople, (err, data) => {
     if(err) {
       done(err)
