@@ -19,7 +19,7 @@ let Person = mongoose.model('Person', personSchema);
 const createAndSavePerson = (done) => {
   const newPerson = new Person ({
     name: "foobar",
-    age: 30,
+    age: 3,
     favoriteFoods: ['Chips', 'Gari']
 })
 
@@ -53,7 +53,7 @@ const findPeopleByName = (personName, done) => {
 };
 
 
-const findOneByFood = (food, done) => {
+const findOneByFood = (food, done) => { 
   done(null /*, data*/);
 };
 
