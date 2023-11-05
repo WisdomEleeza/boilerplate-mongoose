@@ -10,7 +10,6 @@ const personSchema = new Schema({
   },
   age: {
     type: Number,
-    unique: true, 
   },
   favoriteFoods: [String],
 });
