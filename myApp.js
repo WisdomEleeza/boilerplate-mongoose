@@ -133,11 +133,21 @@ const removeManyPeople = (done) => {
   });
 };
 
-
 const queryChain = (done) => {
   const foodToSearch = "burrito";
-
-  done(null /*, data*/);
+  
+  // Use Mongoose query chaining
+  Person.find({ favoriteFoods: foodToSearch })
+    .sort('name') // Sort by name
+    .limit(2) // Limit to two documents
+    .select('-age') // Hide the age
+    .exec((err, data) => {
+      if (err) {
+        done(err);
+      } else {
+        done(null, data);
+      }
+    });
 };
 
 /** **Well Done !!**
