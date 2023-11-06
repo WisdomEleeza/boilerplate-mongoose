@@ -8,9 +8,9 @@ const personSchema = new Schema({
     type: String,
     required: true,
   },
-  // age: {
-  //   type: Number,
-  // },
+  age: {
+    type: Number,
+  },
   favoriteFoods: [String],
 });
 
