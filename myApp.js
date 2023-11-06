@@ -122,9 +122,17 @@ const removeById = (personId, done) => {
 
 const removeManyPeople = (done) => {
   const nameToRemove = "Mary";
-
-  done(null /*, data*/);
+  
+  // Use the 'remove' method to delete all people with the specified name
+  Person.remove({ name: nameToRemove }, (err, result) => {
+    if (err) {
+      done(err);
+    } else {
+      done(null, result);
+    }
+  });
 };
+
 
 const queryChain = (done) => {
   const foodToSearch = "burrito";
